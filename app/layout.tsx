@@ -1,22 +1,22 @@
 export const dynamic = "force-dynamic"
 import type { Metadata } from "next"
-import { Inter, IBM_Plex_Serif } from "next/font/google"
 import "./globals.css"
+import { Inter } from "next/font/google"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-
-const ibmPlexSerif = IBM_Plex_Serif({
+const inter = Inter({
 	subsets: ["latin"],
-	weight: ["400", "700"],
-	variable: "--font-ibm-plex-serif",
+	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+	variable: "--font-inter",
+})
+const spaceGrotesk = Inter({
+	subsets: ["latin"],
+	weight: ["100", "200", "300", "400", "500", "600", "700"],
+	variable: "--font-spaceGrotesk",
 })
 
 export const metadata: Metadata = {
-	title: "PemaZone Bank",
-	description: "Modern bank for everyone",
-	icons: {
-		icon: "/icons/logo.svg",
-	},
+	title: "Banking Apps",
+	description: "The best banking apps in the world",
 }
 
 export default function RootLayout({
@@ -25,8 +25,8 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
-			<body className={`${inter.variable} ${ibmPlexSerif.variable}`}>
+		<html lang="en" suppressHydrationWarning>
+			<body className={`${inter.variable} ${spaceGrotesk.variable}`}>
 				{children}
 			</body>
 		</html>
